@@ -28,7 +28,7 @@ const ui = {
 
     const pensamentoAutoria = document.createElement("div");
     pensamentoAutoria.textContent = pensamento.autoria;
-    pensamentoAutoria.classList.add("pensamento-conteudo");
+    pensamentoAutoria.classList.add("pensamento-autoria");
 
     li.appendChild(iconeAspas);
     li.appendChild(pensamentoConteudo);
