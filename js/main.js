@@ -10,13 +10,6 @@ formularioPensamento.addEventListener("submit", manipularSubmissaoFormulario);
 const btnCancelar = document.getElementById("botao-cancelar");
 btnCancelar.addEventListener("click", limparFormulario);
 
-function limparFormulario(event) {
-  //   debugger;
-  event.preventDefault();
-  document.getElementById("pensamento-form").reset();
-  //Pega o conteúdo do formulário
-}
-
 async function manipularSubmissaoFormulario(event) {
   event.preventDefault();
   const id = document.getElementById("pensamento-id").value;
@@ -24,7 +17,11 @@ async function manipularSubmissaoFormulario(event) {
   const autoria = document.getElementById("pensamento-autoria").value;
 
   try {
-    await api.salvarUmPensamento({ conteudo, autoria });
+    if (id) {
+      await api.editarUmPensamento({ id, conteudo, autoria });
+    } else {
+      await api.salvarUmPensamento({ conteudo, autoria });
+    }
     ui.rederizarPensamentos();
   } catch (error) {
     alert(`Um erro ocorreu ao escrever no formulário: ${error}`);

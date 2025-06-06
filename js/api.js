@@ -19,11 +19,43 @@ const api = {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(pensamento),
+        //Sugestão: Colocar um pop-up (alert) avisando que o pensamento foi registrado e limpar o formulário. Definir melhor ordem depois.
       });
 
       return response.json();
     } catch {
+      alert("Erro ao salvar pensamentos");
+      throw error;
+    }
+  },
+  // Método PUT
+  async buscarPensamentoPorId(id) {
+    try {
+      const response = await fetch(`http://localhost:3000/pensamentos/${id}`);
+
+      return response.json();
+    } catch {
       alert("Erro ao buscar pensamentos");
+      throw error;
+    }
+  },
+  async editarUmPensamento(pensamento) {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/pensamentos/${pensamento.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(pensamento),
+          //Sugestão: Colocar um pop-up (alert) avisando que o pensamento foi registrado e limpar o formulário. Definir melhor ordem depois.
+        }
+      );
+
+      return response.json();
+    } catch {
+      alert("Erro ao editar pensamento");
       throw error;
     }
   },
