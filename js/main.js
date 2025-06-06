@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const formularioPensamento = document.getElementById("pensamento-form");
 formularioPensamento.addEventListener("submit", manipularSubmissaoFormulario);
 const btnCancelar = document.getElementById("botao-cancelar");
-btnCancelar.addEventListener("click", limparFormulario);
+btnCancelar.addEventListener("click", ui.limparFormulario);
 
 async function manipularSubmissaoFormulario(event) {
   event.preventDefault();
