@@ -20,11 +20,11 @@ function limparFormulario(event) {
 async function manipularSubmissaoFormulario(event) {
   event.preventDefault();
   const id = document.getElementById("pensamento-id").value;
-  const pensamento = document.getElementById("pensamento-conteudo").value;
+  const conteudo = document.getElementById("pensamento-conteudo").value;
   const autoria = document.getElementById("pensamento-autoria").value;
 
   try {
-    await api.salvarUmPensamento({ pensamento, autoria });
+    await api.salvarUmPensamento({ conteudo, autoria });
     ui.rederizarPensamentos();
   } catch (error) {
     alert(`Um erro ocorreu ao escrever no formulário: ${error}`);
