@@ -97,8 +97,13 @@
     },
     {
       "id": "4c76",
-      "conteudo": "Teste de escrever pensamento",
+      "conteudo": "Teste de escrever pensamento. Não se esquecer de testar a função de editar",
       "autoria": "Tem que limpar a tela depois"
+    },
+    {
+      "id": "bd5f",
+      "conteudo": "Life is good!! As good as a kiss...",
+      "autoria": "André Matos"
     }
   ]
 }

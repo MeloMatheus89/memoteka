@@ -14,6 +14,7 @@ const ui = {
   },
   async rederizarPensamentos() {
     const listaPensamentos = document.getElementById("lista-pensamentos");
+    listaPensamentos.innerHTML = "";
 
     try {
       const pensamentos = await api.buscarPensamentos();
@@ -51,9 +52,27 @@ const ui = {
 
     btnEditar.appendChild(iconeEditar);
 
+    const btnExcluir = document.createElement("button");
+    btnExcluir.classList.add("botao-excluir");
+    btnExcluir.onclick = async () => {
+      try {
+        await api.excluirPensamento(pensamento.id);
+        ui.rederizarPensamentos();
+      } catch (error) {
+        alert(`Erro ao excluir pensamento`);
+      }
+    };
+
+    const iconeExcluir = document.createElement("img");
+    iconeExcluir.src = "./assets/imagens/icone-excluir.png";
+    iconeExcluir.alt = "Excluir";
+
+    btnExcluir.appendChild(iconeExcluir);
+
     const icones = document.createElement("div");
     icones.classList.add("icones");
     icones.appendChild(btnEditar);
+    icones.appendChild(btnExcluir);
 
     li.appendChild(iconeAspas);
     li.appendChild(pensamentoConteudo);
@@ -61,6 +80,10 @@ const ui = {
     li.appendChild(icones);
 
     listaPensamentos.appendChild(li);
+
+    document.getElementById("pensamento-id").value = "";
+    document.getElementById("pensamento-conteudo").value = "";
+    document.getElementById("pensamento-autoria").value = "";
   },
 };
 
