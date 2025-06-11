@@ -1,7 +1,9 @@
+const URL_BASE = "http://localhost:3000";
+
 const api = {
   async buscarPensamentos() {
     try {
-      const response = await fetch("http://localhost:3000/pensamentos");
+      const response = await fetch(`${URL_BASE}/pensamentos`);
 
       return response.json();
     } catch {
@@ -13,7 +15,7 @@ const api = {
   async salvarUmPensamento(pensamento) {
     debugger;
     try {
-      const response = await fetch("http://localhost:3000/pensamentos", {
+      const response = await fetch(`${URL_BASE}/pensamentos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +33,7 @@ const api = {
   // Método PUT
   async buscarPensamentoPorId(id) {
     try {
-      const response = await fetch(`http://localhost:3000/pensamentos/${id}`);
+      const response = await fetch(`${URL_BASE}/pensamentos/${id}`);
 
       return response.json();
     } catch {
@@ -41,17 +43,14 @@ const api = {
   },
   async editarUmPensamento(pensamento) {
     try {
-      const response = await fetch(
-        `http://localhost:3000/pensamentos/${pensamento.id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(pensamento),
-          //Sugestão: Colocar um pop-up (alert) avisando que o pensamento foi registrado e limpar o formulário. Definir melhor ordem depois.
-        }
-      );
+      const response = await fetch(`${URL_BASE}/pensamentos/${pensamento.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(pensamento),
+        //Sugestão: Colocar um pop-up (alert) avisando que o pensamento foi registrado e limpar o formulário. Definir melhor ordem depois.
+      });
 
       return response.json();
     } catch {
@@ -63,7 +62,7 @@ const api = {
   //Metodo Delete
   async excluirPensamento(id) {
     try {
-      await fetch(`http://localhost:3000/pensamentos/${id}`, {
+      await fetch(`${URL_BASE}/pensamentos/${id}`, {
         method: "DELETE",
       });
     } catch (error) {
