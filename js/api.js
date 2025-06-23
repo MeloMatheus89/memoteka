@@ -69,6 +69,24 @@ const api = {
       alert(`Erro ao excluir pensamento: ${error}`);
     }
   },
+
+  async buscarPensamentoPorTermo(termo) {
+    try {
+      const pensamentos = await this.buscarPensamentos();
+      termoEmMinusculas = termo.toLoweCase();
+
+      const pensamentosFiltrados = pensamentos.filter((pensamento) => {
+        return (
+          pensamento.conteudo.toLoweCase().includes(termoEmMinusculas) ||
+          pensamento.autoria.toLoweCase().includes(termoEmMinusculas)
+        );
+      });
+      return pensamentosFiltrados;
+    } catch (error) {
+      alert("Erro ao procurar pensamento");
+      throw error;
+    }
+  },
 };
 
 export default api;
