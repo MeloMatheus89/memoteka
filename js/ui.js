@@ -12,17 +12,23 @@ const ui = {
     document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
     document.getElementById("pensamento-autoria").value = pensamento.autoria;
   },
-  async rederizarPensamentos() {
+  async rederizarPensamentos(pensamentosFiltrados = null) {
     const listaPensamentos = document.getElementById("lista-pensamentos");
     const mensagemVazia = document.getElementById("mensagem-vazia");
     listaPensamentos.innerHTML = "";
 
     try {
-      const pensamentos = await api.buscarPensamentos();
-      if (pensamentos.length === 0) {
+      let pensamentosParaRenderizar;
+      if (pensamentosFiltrados) {
+        pensamentosParaRenderizar = pensamentosFiltrados;
+      } else {
+        pensamentosParaRenderizar = await api.buscarPensamentos();
+      }
+
+      if (pensamentosParaRenderizar.length === 0) {
         mensagemVazia.style.display = "block";
       } else {
-        pensamentos.forEach(ui.adicionarPensamentoNaLista);
+        pensamentosParaRenderizar.forEach(ui.adicionarPensamentoNaLista);
         mensagemVazia.style.display = "none";
       }
     } catch (error) {

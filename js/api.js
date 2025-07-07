@@ -71,14 +71,15 @@ const api = {
   },
 
   async buscarPensamentoPorTermo(termo) {
+    console.log(termo);
     try {
       const pensamentos = await this.buscarPensamentos();
-      termoEmMinusculas = termo.toLoweCase();
+      let termoEmMinusculas = termo.toLowerCase();
 
       const pensamentosFiltrados = pensamentos.filter((pensamento) => {
         return (
-          pensamento.conteudo.toLoweCase().includes(termoEmMinusculas) ||
-          pensamento.autoria.toLoweCase().includes(termoEmMinusculas)
+          pensamento.conteudo.toLowerCase().includes(termoEmMinusculas) ||
+          pensamento.autoria.toLowerCase().includes(termoEmMinusculas)
         );
       });
       return pensamentosFiltrados;
