@@ -71,7 +71,7 @@ const api = {
   },
 
   async buscarPensamentoPorTermo(termo) {
-    console.log(termo);
+    //console.log(termo);
     try {
       const pensamentos = await this.buscarPensamentos();
       let termoEmMinusculas = termo.toLowerCase();
