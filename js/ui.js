@@ -57,8 +57,20 @@ const ui = {
     // Inicio da criação dos icones e botoes
     const btnFavorito = document.createElement("button");
     btnFavorito.classList.add("botao-favorito");
+
+    btnFavorito.onclick = async () => {
+      try {
+        await api.atualizarFavorito(pensamento.id, !pensamento.favorito);
+        ui.rederizarPensamentos();
+      } catch (error) {
+        alert("Um erro ao atualizar pensamento");
+        throw error;
+      }
+    };
     const iconeFavorito = document.createElement("img");
-    iconeFavorito.src = "./assets/imagens/favorite_outline.svg";
+    iconeFavorito.src = pensamento.favorito
+      ? "./assets/imagens/favorite.svg"
+      : "./assets/imagens/favorite_outline.svg";
     iconeFavorito.alt = "Ícone favorito";
 
     btnFavorito.appendChild(iconeFavorito);
