@@ -53,3 +53,13 @@ Uso de dados:
     PATCH: envia apenas as alterações.
 
 Agora que você compreendeu as diferenças entre PUT e PATCH, poderá escolher o método mais apropriado para atualizar recursos em uma API. Logo, seu código ficará mais eficiente ao interagir com um servidor.
+
+## Formatar datas em JavaScript
+
+### Para que sofrer??
+
+Vamos usar o "porta-peruca ambulante" para anotar as datas e pensar em um formato que seja mais acssível. Vamos às anotaçõs importantes:
+
+1. O JavaScript (como quase todas as linguagens) se baseia no inglês para anotar as datas quando você precisar passar as informações no formato `data = new Date("MM-DD-YYYY")` substitua pelo formato que você já está acostumado ao preencher zilhões de formulários.
+2. Ele também pode ser usado com uma "pegadinha" para escrever a data completa. `data = new Date(2025, 06, 25)` Isso retorna 25 de julho de 2025. O mês usa a mesma lógica de arrays para ser composto. Para ficar mais fácil a sua vida, use valor do mês no calendario-1 e seja feliz.
+3. O new Date() sempre retorna como o dia completo, existem formas de trabalhar com datas e horários mais completos (veja o repositório da lista de compras para pegar detalhes de como extrair apenas o horário e/dia da semana)

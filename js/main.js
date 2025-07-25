@@ -22,7 +22,7 @@ async function manipularSubmissaoFormulario(event) {
 
   if (!validarData(data)) {
     alert(
-      "Não é permitido cadastrar datas futuras, favor inserir outras datas."
+      "Não é permitido cadastrar datas futuras. Favor inserir outras datas."
     );
   }
 
