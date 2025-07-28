@@ -1,11 +1,16 @@
 const URL_BASE = "http://localhost:3000";
 
+const converterStringParaData = (dataString) => {
+  const [ano, mes, dia] = dataString.split("-"); // Irá pegar a data de 2025-07-28 e converter em [2025, 07, 08]
+  return new Date(Date.UTC(ano, mes, dia));
+};
+
 const api = {
   async buscarPensamentos() {
     try {
-      const response = await fetch(`${URL_BASE}/pensamentos`);
+      const response = await axios.get(`${URL_BASE}/pensamentos`);
 
-      return response.json();
+      return await response.data;
     } catch {
       alert("Erro ao buscar pensamentos");
       throw error;
@@ -15,16 +20,9 @@ const api = {
   async salvarUmPensamento(pensamento) {
     debugger;
     try {
-      const response = await fetch(`${URL_BASE}/pensamentos`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(pensamento),
-        //Sugestão: Colocar um pop-up (alert) avisando que o pensamento foi registrado e limpar o formulário. Definir melhor ordem depois.
-      });
+      const response = await axios.post(`${URL_BASE}/pensamentos`, pensamento);
 
-      return response.json();
+      return await response.data;
     } catch {
       alert("Erro ao salvar pensamentos");
       throw error;
@@ -33,9 +31,9 @@ const api = {
   // Método PUT
   async buscarPensamentoPorId(id) {
     try {
-      const response = await fetch(`${URL_BASE}/pensamentos/${id}`);
+      const response = await axios.get(`${URL_BASE}/pensamentos/${id}`);
 
-      return response.json();
+      return await response.data;
     } catch {
       alert("Erro ao buscar pensamentos");
       throw error;
@@ -43,16 +41,11 @@ const api = {
   },
   async editarUmPensamento(pensamento) {
     try {
-      const response = await fetch(`${URL_BASE}/pensamentos/${pensamento.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(pensamento),
-        //Sugestão: Colocar um pop-up (alert) avisando que o pensamento foi registrado e limpar o formulário. Definir melhor ordem depois.
-      });
+      const response = await axios.get(
+        `${URL_BASE}/pensamentos/${pensamento.id}`
+      );
 
-      return response.json();
+      return await response.data;
     } catch {
       alert("Erro ao editar pensamento");
       throw error;
@@ -62,9 +55,7 @@ const api = {
   //Metodo Delete
   async excluirPensamento(id) {
     try {
-      await fetch(`${URL_BASE}/pensamentos/${id}`, {
-        method: "DELETE",
-      });
+      await axios.delete(`${URL_BASE}/pensamentos/${id}`);
     } catch (error) {
       alert(`Erro ao excluir pensamento: ${error}`);
     }

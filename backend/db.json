@@ -4,127 +4,148 @@
       "id": "2a56",
       "favorito": false,
       "conteudo": "Vc faz TI? Conserta meu celular!",
-      "autoria": "Grupo da família"
+      "autoria": "Grupo da família",
+      "data": "2023-01-15T10:30:00.000Z"
     },
     {
       "id": "4c7d",
       "favorito": false,
       "conteudo": "Da vida reclama, mas sem ela não vive!",
-      "autoria": "Mestre Yoda"
+      "autoria": "Mestre Yoda",
+      "data": "2022-05-20T14:00:00.000Z"
     },
     {
       "id": "5b8a",
       "favorito": false,
       "conteudo": "Na minha máquina funciona!",
-      "autoria": "Dev"
+      "autoria": "Dev",
+      "data": "2024-02-28T09:15:00.000Z"
     },
     {
       "id": "68uy",
       "favorito": false,
       "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
-      "autoria": "Chaves"
+      "autoria": "Chaves",
+      "data": "2021-11-01T18:45:00.000Z"
     },
     {
       "id": "b807",
       "favorito": false,
       "conteudo": "Melhor professor, o fracasso é!",
-      "autoria": "Mestre Yoda"
+      "autoria": "Mestre Yoda",
+      "data": "2023-09-10T07:00:00.000Z"
     },
     {
       "id": "9f3c",
       "favorito": false,
       "conteudo": "Você não é todo mundo!",
-      "autoria": "Mãe"
+      "autoria": "Mãe",
+      "data": "2022-03-05T11:20:00.000Z"
     },
     {
       "id": "6a2b",
       "favorito": false,
       "conteudo": "Foi sem querer querendo!",
-      "autoria": "Chaves"
+      "autoria": "Chaves",
+      "data": "2021-08-25T16:10:00.000Z"
     },
     {
       "id": "7e2a",
       "favorito": false,
       "conteudo": "Que a força esteja com você!",
-      "autoria": "Mestre Yoda"
+      "autoria": "Mestre Yoda",
+      "data": "2024-01-01T00:00:00.000Z"
     },
     {
       "id": "5c8f",
       "favorito": false,
       "conteudo": "Resolver o bug não consegue? Esfriar a cabeça vc deve.",
-      "autoria": "Mestre Yoda"
+      "autoria": "Mestre Yoda",
+      "data": "2023-06-30T13:05:00.000Z"
     },
     {
       "id": "2d6e",
       "favorito": false,
       "conteudo": "Não faça drama, faça café! :)",
-      "autoria": "Dev"
+      "autoria": "Dev",
+      "data": "2022-10-18T08:50:00.000Z"
     },
     {
       "id": "3f1a",
       "favorito": false,
       "conteudo": "Conserta minha impressora?",
-      "autoria": "Grupo da família"
+      "autoria": "Grupo da família",
+      "data": "2023-04-03T17:00:00.000Z"
     },
     {
       "id": "8b4c",
       "favorito": false,
       "conteudo": "A vingança nunca é plena... mata a alma e a envenena...",
-      "autoria": "Seu Madruga"
+      "autoria": "Seu Madruga",
+      "data": "2021-09-12T19:30:00.000Z"
     },
     {
       "id": "4d2e",
       "favorito": false,
       "conteudo": "Se eu for aí e achar, eu esfrego na sua cara!",
-      "autoria": "Mãe"
+      "autoria": "Mãe",
+      "data": "2024-03-20T10:00:00.000Z"
     },
     {
       "id": "7e4b",
       "favorito": false,
       "conteudo": "Eu sou um gênio da organização.",
-      "autoria": "Minha esposa"
+      "autoria": "Minha esposa",
+      "data": "2023-07-22T15:40:00.000Z"
     },
     {
       "id": "4570",
       "favorito": false,
       "conteudo": "Eu estou sempre certa!",
-      "autoria": "Minha esposa"
+      "autoria": "Minha esposa",
+      "data": "2022-01-01T06:00:00.000Z"
     },
     {
       "id": "833f",
       "favorito": true,
       "conteudo": "Quero sachê!",
-      "autoria": "Link e Zelda"
+      "autoria": "Link e Zelda",
+      "data": "2024-04-14T21:00:00.000Z"
     },
     {
       "id": "67d1",
       "favorito": false,
       "conteudo": "Alguém como eu jamais nasceu... Tá olhando para quem te comeu.",
-      "autoria": "Cavalo, Cara de"
+      "autoria": "Cavalo, Cara de",
+      "data": "2023-11-05T12:00:00.000Z"
     },
     {
       "id": "5d97",
       "favorito": false,
       "conteudo": "Vou te dizer então... Disfarça!",
-      "autoria": "Coxinha"
+      "autoria": "Coxinha",
+      "data": "2022-08-08T09:00:00.000Z"
     },
     {
       "id": "4433",
       "favorito": false,
       "conteudo": "Prioridades primeiro",
-      "autoria": "Matheus"
+      "autoria": "Matheus",
+      "data": "2024-06-25T14:00:00.000Z"
     },
     {
       "id": "bd5f",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Life is good!! As good as a kiss...",
-      "autoria": "André Matos"
+      "autoria": "André Matos",
+      "data": "2023-03-17T20:00:00.000Z"
     },
     {
       "id": "72e9",
       "favorito": false,
       "conteudo": "Que desgraça é para o homem envelhecer sem nunca ver a beleza e a força do que o seu corpo é capaz",
-      "autoria": "Sócrates"
+      "autoria": "Sócrates",
+      "data": "2022-09-01T11:00:00.000Z"
     }
   ]
 }
