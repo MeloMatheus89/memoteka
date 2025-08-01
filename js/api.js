@@ -2,7 +2,7 @@ const URL_BASE = "http://localhost:3000";
 
 const converterStringParaData = (dataString) => {
   const [ano, mes, dia] = dataString.split("-"); // Irá pegar a data de 2025-07-28 e converter em [2025, 07, 08]
-  return new Date(Date.UTC(ano, mes, dia));
+  return new Date(Date.UTC(ano, mes - 1, dia));
 };
 
 const api = {
@@ -10,7 +10,14 @@ const api = {
     try {
       const response = await axios.get(`${URL_BASE}/pensamentos`);
 
-      return await response.data;
+      const pensamentos = await response.data;
+
+      return pensamentos.map((pensamento) => {
+        return {
+          ...pensamento,
+          data: new Date(pensamento.data),
+        };
+      });
     } catch {
       alert("Erro ao buscar pensamentos");
       throw error;
@@ -20,7 +27,11 @@ const api = {
   async salvarUmPensamento(pensamento) {
     debugger;
     try {
-      const response = await axios.post(`${URL_BASE}/pensamentos`, pensamento);
+      const dataFormulario = converterStringParaData(pensamento.data);
+      const response = await axios.post(`${URL_BASE}/pensamentos`, {
+        ...pensamento,
+        dataFormulario,
+      });
 
       return await response.data;
     } catch {
