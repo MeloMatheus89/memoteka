@@ -27,10 +27,10 @@ const api = {
   async salvarUmPensamento(pensamento) {
     debugger;
     try {
-      const dataFormulario = converterStringParaData(pensamento.data);
+      const data = converterStringParaData(pensamento.data);
       const response = await axios.post(`${URL_BASE}/pensamentos`, {
         ...pensamento,
-        dataFormulario,
+        data: data.toISOString(),
       });
 
       return await response.data;
@@ -44,7 +44,11 @@ const api = {
     try {
       const response = await axios.get(`${URL_BASE}/pensamentos/${id}`);
 
-      return await response.data;
+      const pensamento = await response.data;
+      return {
+        ...pensamento,
+        data: new Date(pensamento.data),
+      };
     } catch {
       alert("Erro ao buscar pensamentos");
       throw error;
