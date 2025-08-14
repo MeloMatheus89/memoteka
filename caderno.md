@@ -63,3 +63,11 @@ Vamos usar o "porta-peruca ambulante" para anotar as datas e pensar em um format
 1. O JavaScript (como quase todas as linguagens) se baseia no inglês para anotar as datas quando você precisar passar as informações no formato `data = new Date("MM-DD-YYYY")` substitua pelo formato que você já está acostumado ao preencher zilhões de formulários.
 2. Ele também pode ser usado com uma "pegadinha" para escrever a data completa. `data = new Date(2025, 06, 25)` Isso retorna 25 de julho de 2025. O mês usa a mesma lógica de arrays para ser composto. Para ficar mais fácil a sua vida, use valor do mês no calendario-1 e seja feliz.
 3. O new Date() sempre retorna como o dia completo, existem formas de trabalhar com datas e horários mais completos (veja o repositório da lista de compras para pegar detalhes de como extrair apenas o horário e/dia da semana)
+
+## Regex
+
+Aqui podemos usar algumas outras formas para garantir que o formulário não fique fraco e com dados vazios. Isso pode prejudicar a regra de negócio de alguns formulários. Dito isso usaremos o regex.
+`const regexConteudo = /^[A-za-z]{10,}$/ `
+Essa variável diz que estou limitando algum campo a ter apenas letras e no mínimo 10 caracteres. Entre colchetes eu digo o que é válido e entre chaves eu digo a quantidade de caracteres.
+
+Agora basta adicionar uma função que valida se esse campo está certo e, se não estiver, mandar uma mensagem de comunicação com o usuário da página.

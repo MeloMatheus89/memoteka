@@ -15,7 +15,7 @@ const ui = {
     document.getElementById("pensamento-data").value = pensamento.data
       .toISOString()
       .split("T")[0];
-
+    // Faz com que a tela vá até o ponto focal onde será exibido o formulário.
     document.getElementById("form-container").scrollIntoView();
   },
   async rederizarPensamentos(pensamentosFiltrados = null) {
@@ -62,7 +62,7 @@ const ui = {
 
     const pensamentoData = document.createElement("div");
 
-    var options = {
+    let options = {
       weekday: "long",
       year: "numeric",
       month: "long",

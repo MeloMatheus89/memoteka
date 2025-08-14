@@ -1,6 +1,16 @@
 import ui from "./ui.js";
 import api from "./api.js";
 
+const regexConteudo = /^[A-Za-z]{10,}$/;
+const regexAutoria = /^[A-Za-z]{3,15} $/;
+
+function validarConteudo(conteudo) {
+  return regexConteudo.test(conteudo);
+}
+
+function validarAutoria(Autoria) {
+  return regexAutoria.test(Autoria);
+}
 document.addEventListener("DOMContentLoaded", () => {
   ui.rederizarPensamentos();
   const formularioPensamento = document.getElementById("pensamento-form");
@@ -19,6 +29,20 @@ async function manipularSubmissaoFormulario(event) {
   const conteudo = document.getElementById("pensamento-conteudo").value;
   const autoria = document.getElementById("pensamento-autoria").value;
   const data = document.getElementById("pensamento-data").value;
+
+  if (!validarConteudo(conteudo)) {
+    alert(
+      `O campo "Conteúdo" não foi preenchido corretamente. O campo aceita apenas letras e com no mínimo 10 caracteres.`
+    );
+    return;
+  }
+
+  if (!validarAutoria(autoria)) {
+    alert(
+      `O campo "Autoria" não foi preenchido corretamente. O campo aceita apenas letras e com no mínimo 3 caracteres e máximo de 15.`
+    );
+    return;
+  }
 
   if (!validarData(data)) {
     alert(
