@@ -1,7 +1,7 @@
 import ui from "./ui.js";
 import api from "./api.js";
 
-const regexConteudo = /^[A-Za-z]{10,}$/;
+const regexConteudo = /^[A-Za-z\s]{10,}$/;
 const regexAutoria = /^[A-Za-z]{3,15} $/;
 
 function validarConteudo(conteudo) {
