@@ -64,7 +64,7 @@ Vamos usar o "porta-peruca ambulante" para anotar as datas e pensar em um format
 2. Ele também pode ser usado com uma "pegadinha" para escrever a data completa. `data = new Date(2025, 06, 25)` Isso retorna 25 de julho de 2025. O mês usa a mesma lógica de arrays para ser composto. Para ficar mais fácil a sua vida, use valor do mês no calendario-1 e seja feliz.
 3. O new Date() sempre retorna como o dia completo, existem formas de trabalhar com datas e horários mais completos (veja o repositório da lista de compras para pegar detalhes de como extrair apenas o horário e/dia da semana)
 
-## Regex
+### Regex
 
 Aqui podemos usar algumas outras formas para garantir que o formulário não fique fraco e com dados vazios. Isso pode prejudicar a regra de negócio de alguns formulários. Dito isso usaremos o regex.
 `const regexConteudo = /^[A-za-z]{10,}$/ `

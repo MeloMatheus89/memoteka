@@ -8,6 +8,10 @@ function validarConteudo(conteudo) {
   return regexConteudo.test(conteudo);
 }
 
+function removerEspacos(string) {
+  return string.replaceAll(/\s+/g, "");
+}
+
 function validarAutoria(Autoria) {
   return regexAutoria.test(Autoria);
 }
@@ -30,7 +34,9 @@ async function manipularSubmissaoFormulario(event) {
   const autoria = document.getElementById("pensamento-autoria").value;
   const data = document.getElementById("pensamento-data").value;
 
-  if (!validarConteudo(conteudo)) {
+  const conteudoSemEspaco = removerEspacos(conteudo);
+
+  if (!validarConteudo(conteudoSemEspaco)) {
     alert(
       `O campo "Conteúdo" não foi preenchido corretamente. O campo aceita apenas letras e com no mínimo 10 caracteres.`
     );
